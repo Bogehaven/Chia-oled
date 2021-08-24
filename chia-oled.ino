@@ -26,7 +26,7 @@ String sensorReadings1;
 String sensorReadings2;
 String d1;
 String d2;
-// примеры:
+// Change this to fit the size of your oled
 //GyverOLED<SSD1306_128x32, OLED_BUFFER> oled;
 //GyverOLED<SSD1306_128x32, OLED_NO_BUFFER> oled;
 // GyverOLED<SSD1306_128x64, OLED_BUFFER> oled;
@@ -68,6 +68,10 @@ void loop() {
     deserializeJson(doc1, sensorReadings1);
     deserializeJson(doc2, sensorReadings2);
 
+    // These can be modified to get the results you want from your API.
+    // You can explore your Machinaris API at http://YOUR_IP:8927
+    // The Assistant-tool on the ArduinoJson website can be helptful 
+    // figuring out how to get the correct variables
     JsonObject root_0 = doc1[0];
     int plot_count = root_0["plot_count"]; // 50
     int total_chia = root_0["total_chia"]; // 0
